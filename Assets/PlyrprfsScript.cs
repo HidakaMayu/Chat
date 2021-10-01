@@ -26,11 +26,9 @@ public class PlyrprfsScript : MonoBehaviour
     {
         if(inputField != null)
         {
-            string ho = System.DateTime.Now.Hour.ToString();
-            string mn = System.DateTime.Now.Minute.ToString();
-            string sc = System.DateTime.Now.Second.ToString();
+            string da = System.DateTime.Now.ToString("MM/dd/yyyy H:mm:ss");
 
-            displayText.text = inputField.text + "(" + ho + ":" + mn + ":" + sc + ")" + "\n" + displayText.text;
+            displayText.text = inputField.text + "(" + da + ")" + "\n" + displayText.text;
             PlayerPrefs.SetString("ChatLog", displayText.text);
             PlayerPrefs.Save();
             inputField.text = "";
